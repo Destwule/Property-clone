@@ -17,6 +17,10 @@ input, button, select {
     outline: none;
 }
 
+html, body {
+    width: 100%;
+}
+
 :root {
     --COLOR: #444;
     --LOGO-COLOR: indigo;
@@ -27,6 +31,7 @@ input, button, select {
     --NAV-HOVER-BGCOLOR: rgba(173, 216, 230, .2);
     --BTN-HOVER-BGCOLOR: rgba(0, 0, 255, 0.6);
     --SEARCH-BGCOLOR: rgba(75, 0, 139, 0.3);
+    --SB-COLOR: darkslateblue;
 }
 
 /* GENERAL CLASSES */
@@ -61,10 +66,9 @@ input, button, select {
 
 /* ELEMENT TAGS */
 
-section {
+.hero {
     display: flex;
     flex-direction: column;
-    max-width: 100vw;
 }
 
 a {
@@ -86,6 +90,8 @@ a {
     z-index: 100;
     max-width: 100%;
     background-color: white;
+    /* small horizontal padding so children don't rely on large margins that cause overflow */
+    padding: 0 1rem;
 }
 
 .navbar ul {
@@ -115,7 +121,8 @@ a {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin: 1rem 2rem;
+    /* reduce horizontal margins to avoid adding extra width on small viewports */
+    margin: 1rem 0;
     width: 100%;
 }
 
@@ -193,7 +200,8 @@ a {
 
 .image-section {
     height: 470px;
-    width: 100vw;
+    /* use 100% instead of 100vw to avoid creating horizontal overflow when scrollbars appear */
+    width: 100%;
     background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url("../img/Homepage_Banner.png");
     background-repeat: no-repeat;
     background-size: cover;
@@ -395,6 +403,14 @@ a {
 .dropdown-option:hover { background: #f8f9fa; }
 .placeholder { color: #888; }
 
+
+/* MAIN CONTAINER SECTION  */
+
+.main-container {
+    max-width: 1200px;
+    margin-inline: auto;
+}
+
 /* SPONSORS SECTION */
 .sponsors-section {
     height: 70vh;
@@ -429,29 +445,29 @@ a {
 }
 
 /* FEATURED HOMES SECTION */
-.featured-homes-section {
+.container {
     display: flex;
     flex-direction: column;
-    padding: 0 2rem;
-    height: 40vh;
+    padding: 1rem 2rem;
     z-index: 0;
+    margin-bottom: 10em;
 }
 
-.featured-homes-section .heading {
+.container .heading {
     display: flex;
     justify-content: space-between;
+    color: var(--LOGO-COLOR);
 }
 
 .heading h2 {
     font-size: 2rem;
     font-weight: bolder;
+    color: ;
 }
 
 .heading a {
     font-weight: bolder;
-    color: var(--LOGO-COLOR);
     font-size: 1.2em;
-    /* border-bottom: 2px solid var(--LOGO-COLOR); */
     position: relative;
 }
 
@@ -463,4 +479,48 @@ a {
     position: absolute;
     left: 0;
     transform: translateY(20px);
+}
+
+.homes {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr;
+    grid-auto-rows: 250px;
+    gap: 1rem;
+    margin-top: 3rem;
+}
+
+.home {
+    cursor: pointer;
+}
+
+.home .home-img {
+    height: 80%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 1.5rem;
+    border: 1px solid black;
+}
+
+.home .info-section {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1em;
+    font-weight: bolder;
+}
+
+.info-section :is(:first-child, :last-child) {
+    font-size: 1.4em;
+}
+
+.info-section .home-price {
+    font-size: 1.8em;
+}
+
+.info-section .home-name {
+    color: tomato;
+}
+
+.info-section :not(:first-child) {
+    color: var(--SB-COLOR);
 }
