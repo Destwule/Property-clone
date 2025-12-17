@@ -19,7 +19,7 @@ const homes = [
     }
 ]
 
-const formatter = new Intl.NumberFormat("en-NG", {
+export const formatter = new Intl.NumberFormat("en-NG", {
     style: 'currency',
     currency: 'NGN',
 });
