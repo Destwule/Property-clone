@@ -55,7 +55,16 @@ function make_table(element, list, heading_suffix) {
     
     const table_head_text = document.createElement("div");
     table_head_text.classList.add("head");
+
+    const table_head_logo = document.createElement("div");
+    table_head_logo.innerHTML = `<svg viewBox="0 0 18.188 11.126" width="1em" height="1em" color="#fff"> 
+            <path d="m18.186.506-.362 3.491a.462.462 0 0 1-.781.278l-.856-.856-5.392 5.392a.925.925 0 0 1-1.273 0l-2.97-2.97-5.02 5.021a.9.9 0 0 1-1.27-1.273l5.653-5.653a.921.921 0 0 1 1.27 0l2.973 2.97 4.758-4.758-1-1a.459.459 0 0 1 .275-.781l3.487-.364a.458.458 0 0 1 .508.503z" fill="#fff"></path> 
+           </svg>
+           `;
     
+    table_head_logo.classList.add("icon");
+    table_head.appendChild(table_head_logo);
+
     const head_title = document.createElement("p");
     head_title.classList.add("title");
     head_title.textContent = `Top ${heading_suffix}`;
@@ -88,7 +97,7 @@ function make_table(element, list, heading_suffix) {
             }
 
             table_row.appendChild(row_item);
-            
+
             const click_here = document.createElement("div");
             click_here.classList.add("click-here");
             click_here.setAttribute('data-url', "#");

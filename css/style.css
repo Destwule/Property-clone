@@ -32,7 +32,11 @@ html, body {
     --BTN-HOVER-BGCOLOR: rgba(0, 0, 255, 0.6);
     --SEARCH-BGCOLOR: rgba(75, 0, 139, 0.3);
     --SB-COLOR: darkslateblue;
-}
+    --MARKET-GOOD-BG: rgba(0, 128, 0, 0.3);
+    --MARKET-GOOD-COLOR: darkgreen;
+    --MARKET-BAD-BG: rgba(255, 0, 0, 0.3);
+    --MARKET-BAD-COLOR: red;
+}   
 
 /* GENERAL CLASSES */
 .btn {
@@ -293,6 +297,28 @@ a {
     font-size: 1.5rem;
 }
 
+.table-head {
+    display: flex;
+    gap: 1em;
+}
+
+.table-head .icon {
+    color: var(--FFF-COLOR);
+    font-size: 2rem;
+    padding: 1rem;
+    border-radius: 50%;
+    opacity: 0.7;
+}
+
+.gainers .icon {
+    background-color: var(--MARKET-GOOD-COLOR);
+}
+
+.losers .icon {
+    background-color: var(--MARKET-BAD-COLOR);
+    transform: rotate(90deg);
+}
+
 .click-here {
     position: absolute;
     top: 0;
@@ -319,13 +345,13 @@ a {
 }
 
 .gainers .performance {
-    background-color: rgba(0, 128, 0, 0.3);
-    color: darkgreen;
+    background-color: var(--MARKET-GOOD-BG);
+    color: var(--MARKET-GOOD-COLOR);
 }
 
 .losers .performance {
-    background-color: rgba(255, 0, 0, 0.3);
-    color: red;
+    background-color: var(--MARKET-BAD-BG);
+    color: var(--MARKET-BAD-COLOR);
 }
 
 .performance .sign {
