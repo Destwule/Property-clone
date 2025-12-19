@@ -1,6 +1,7 @@
 
 /* FEATURED HOMES SECTION */
 .container {
+    max-width: 100%;
     display: flex;
     flex-direction: column;
     gap: 3rem;
@@ -12,7 +13,12 @@
 .container .heading {
     display: flex;
     justify-content: space-between;
-    color: var(--LOGO-COLOR);
+    color: var(--LOGO-COLOR);;
+}
+
+.heading * {
+    font-family: "Bangers", system-ui !important;
+    font-style: 3rem !important;
 }
 
 .heading h2 {

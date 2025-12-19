@@ -5,7 +5,9 @@
     margin: 0;
     box-sizing: border-box;
     font-family: monospace;
+    font-style: normal;
 }
+
 
 img {
     display: block;
@@ -119,7 +121,9 @@ a {
     color: var(--LOGO-COLOR);
     cursor: pointer;
     white-space: nowrap;
+    font-family: "Bebas Neue", system-ui !important;
 }
+
 
 .navbar .nav-section {
     display: flex;
@@ -356,4 +360,77 @@ a {
 
 .performance .sign {
     color: inherit;
+}
+
+
+/* NEIGHBOURHOOD GUIDE SECTION */
+.neighbourhood-guide .places {
+    max-width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 220px;
+    gap: 2em;
+
+    grid-template-areas:
+        "lagos abuja abuja ibadan"
+        "lagos port-harcourt delta ibadan";
+}
+
+.abuja { grid-area: abuja; }
+.lagos { grid-area: lagos; }
+.delta { grid-area: delta; }
+.ibadan { grid-area: ibadan; }
+.port-harcourt { grid-area: port-harcourt; }
+
+.places .card {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+
+    border-radius: 2em;
+    overflow: hidden;
+}
+
+.places .image-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+
+    grid-row: 1 / 3;
+    grid-column: 1 / 3;
+}
+
+.image-container::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.places img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.places * {
+    color: var(--FFF-COLOR) !important;
+}
+
+.places .info-section {
+    grid-row: 2 / 3;
+    grid-column: 1 / 3;
+    width: 90%;
+
+    padding: 1em;
+    cursor: pointer;
+    transform: translate(20px, -20%);
+}
+
+.places h3 {
+    font-size: 16px !important;
+}
+
+.places .location {
+    font-size: 12px !important;
 }

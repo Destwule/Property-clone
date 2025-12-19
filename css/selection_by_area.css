@@ -1,0 +1,19 @@
+.selection-by-area {
+    display: flex !important;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.main .heading {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.selection-by-area .aside {
+    padding: 0 3em;
+}
+
+.selection-by-area .aside {
+    border-left: 1px solid var(--COLOR);
+}
