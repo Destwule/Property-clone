@@ -13,7 +13,7 @@
 .container .heading {
     display: flex;
     justify-content: space-between;
-    color: var(--LOGO-COLOR);;
+    color: var(--LOGO-COLOR);
 }
 
 .heading * {
