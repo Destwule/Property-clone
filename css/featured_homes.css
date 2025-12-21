@@ -17,8 +17,8 @@
 }
 
 .heading * {
-    font-family: "Bangers", system-ui !important;
-    font-style: 3rem !important;
+    /* font-family: "Bangers", system-ui !important; */
+    font-style: 4rem !important;
 }
 
 .heading h2 {

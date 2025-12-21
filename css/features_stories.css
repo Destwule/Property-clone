@@ -1,0 +1,65 @@
+.headlines {
+    margin-top: 1em;
+    display: flex;
+    flex-flow: column;
+    gap: 3em;
+}
+
+.row-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+}
+
+.main .headlines {
+    border-top: 1px solid var(--COLOR);
+    padding: 1.5em 0.3em;
+}
+
+.main .headlines:first-child {
+    flex-grow: 2;
+}
+
+.headline {
+    position: relative;
+}
+
+.wrapper {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+.headline .img {
+    width: 200px;
+    height: 120px;
+    padding: 0.2em;
+}
+
+.headline img {
+    width: 100%;
+    height: 100%;
+    border-radius: 1em;
+    object-fit: contain;
+    border: 1px solid var(--COLOR);
+}
+
+.headline h3 {
+    font-size: 1.5rem;
+}
+
+.headline .content {
+    font-size: 1.1rem;
+    padding: 0.5em 0;
+}
+
+.headline .date {
+    margin-top: 1.5em;
+    font-size: 1.1em;
+}
+
+.other-stories .heading {
+    font-size: 1.2rem !important;
+    font-weight: bolder;
+}

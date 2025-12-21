@@ -73,7 +73,9 @@ areas_click.forEach(area_click => {
         event.target.classList.toggle("rotate-after");
         const sibling = event.target.nextSibling;
         
-        sibling.classList.toggle("show");
+        if (sibling !== null) {
+            sibling.classList.toggle("show");
+        }
     })
 })
 

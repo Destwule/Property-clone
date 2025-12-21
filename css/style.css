@@ -121,7 +121,7 @@ a {
     color: var(--LOGO-COLOR);
     cursor: pointer;
     white-space: nowrap;
-    font-family: "Bebas Neue", system-ui !important;
+    /* font-family: "Bebas Neue", system-ui !important; */
 }
 
 
@@ -391,16 +391,18 @@ a {
     overflow: hidden;
 }
 
-.places .image-container {
+.image-container {
     width: 100%;
     height: 100%;
     position: relative;
+}
 
+.places .image-container {
     grid-row: 1 / 3;
     grid-column: 1 / 3;
 }
 
-.image-container::before {
+.places .image-container::before {
     content: "";
     position: absolute;
     inset: 0;
