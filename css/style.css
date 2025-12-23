@@ -117,11 +117,10 @@ a {
 }
 
 .navbar .logo {
-    margin-right: 25px;
+    margin-right: 15px;
     color: var(--LOGO-COLOR);
     cursor: pointer;
     white-space: nowrap;
-    /* font-family: "Bebas Neue", system-ui !important; */
 }
 
 

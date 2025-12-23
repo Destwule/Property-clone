@@ -1,0 +1,9 @@
+/* Tablets (portrait) */
+/* 
+    NOTE: When max-width is used with screen, this means that when the screen size is the max-width or less the styles will be applied
+*/
+@media (max-width: 768px) {
+    .navbar .nav-section {
+        position: fixed;
+    }
+}
