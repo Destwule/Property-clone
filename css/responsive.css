@@ -19,7 +19,7 @@
         display: block;
     }
 
-    .responsive-nav-section .logo {
+    .responsive-nav-section .logo-area {
         display: flex;
         align-items: center;
     }
@@ -55,7 +55,7 @@
         transform: translateX(0);
     }
     
-    .nav-section .logo {
+    .nav-section .logo-area {
         padding: 0.3em;
         order: 0;
         width: 100%;
@@ -68,7 +68,7 @@
         justify-content: space-between;
     }
     
-    .nav-section .logo .close-icon {
+    .nav-section .logo-area .close-icon {
         margin-right: 15px;
         cursor: pointer;
     }
