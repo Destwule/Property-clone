@@ -28,7 +28,7 @@ html, body {
     --LOGO-COLOR: indigo;
     /* color: rgba(0, 0, 139, 3); */
     /* color: rgba(75, 0, 139, 0.5); */
-    --NAV-HOVER-COLOR: blue;
+    --NAV-HOVER-COLOR: #0d6efd;
     --FFF-COLOR: #fff;
     --NAV-HOVER-BGCOLOR: rgba(173, 216, 230, .2);
     --BTN-HOVER-BGCOLOR: rgba(0, 0, 255, 0.6);
@@ -41,6 +41,10 @@ html, body {
 }   
 
 /* GENERAL CLASSES */
+.block {
+    display: block !important;
+}
+
 .btn {
     background-color: var(--LOGO-COLOR);
     color: var(--FFF-COLOR);
@@ -61,12 +65,12 @@ html, body {
 .top-Border::before {
     content: '';
     position: absolute;
-    width: 90%;
+    width: 100%;
     height: 1px;
     display: block;
     background-color: black;
     top: 0;
-    left: 5%;
+    left: 0;
     margin-top: 0.5em;
 }
 
@@ -84,6 +88,26 @@ a {
     display: block;
 }
 
+/* RESPONSIVE NAVBAR */
+.responsive-nav-section img {
+    display: inline;
+}
+
+.hamburger {
+    cursor: pointer;
+    padding: 0.1em 0.3em;
+    border: 2px solid transparent;
+    border-radius: 0.4em;
+}
+
+.hamburger:active {
+    border-color: #2563eb;
+}
+
+.close-icon {
+    display: none;
+}
+
 /* NAVBAR SECTION */
 
 .navbar {
@@ -97,7 +121,7 @@ a {
     max-width: 100%;
     background-color: white;
     /* small horizontal padding so children don't rely on large margins that cause overflow */
-    padding: 0 1rem;
+    padding: 0 2rem;
 }
 
 .navbar ul {
@@ -123,23 +147,25 @@ a {
     white-space: nowrap;
 }
 
+.navbar .nav:first-child {
+    display: none;
+}
 
-.navbar .nav-section {
+.navbar .nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
     /* reduce horizontal margins to avoid adding extra width on small viewports */
     margin: 1rem 0;
+    flex-wrap: wrap;
+    gap: 0.5rem;
     width: 100%;
 }
 
 /* Responsive tweaks: allow nav to wrap and items to shrink rather than overflow */
-.navbar .nav-section {
-    flex-wrap: wrap;
-    gap: 0.5rem;
-}
 
-.navbar :is(.start) {
+.navbar .start {
+    display: flex;
     flex: 1 1 0;
     min-width: 0; /* allow children to shrink inside flex */
     align-items: center;
@@ -152,12 +178,8 @@ a {
     flex: 0 1 auto;
     align-items: center;
     flex-wrap: wrap;
-    z-index: 100;
+    z-index: 1;
     background-color: white;
-}
-
-.navbar :is(.start, .end) {
-    display: flex;
 }
 
 .navbar :is(.first, .second, .end) {
@@ -181,6 +203,7 @@ a {
 
 .dropdown-elements {
     position: relative;
+    width: 100%;
 }
 
 .dropdown-items {

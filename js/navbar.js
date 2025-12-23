@@ -107,6 +107,7 @@ export function construct_dropdown(element_tag, list){
         
         new_div.classList.add("dropdown-elements");
         new_anchor.textContent = obj.title;
+        new_anchor.classList.add("dropdown-heading")
         new_div.appendChild(new_anchor);
         
 
