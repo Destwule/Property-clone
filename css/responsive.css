@@ -216,6 +216,15 @@
 
 /* PHONE VIEW */
 @media (max-width: 766px) {
+    .responsive-nav-section {
+        display: flex !important;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: row;
+    }
+    .responsive-nav-section .login {
+        display: block;
+    }
 
     .search-form {
         border-top: none;

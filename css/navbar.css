@@ -1,5 +1,16 @@
 
 /* RESPONSIVE NAVBAR */
+.responsive-nav-section .login {
+    background-color: hsl(240, 100%, 50%);
+    color: white;
+    display: none;
+}
+
+.responsive-nav-section .login:hover {
+    background-color: hsl(240, 100%, 60%);
+    color: white;
+}
+
 .responsive-nav-section img {
     display: inline;
 }
