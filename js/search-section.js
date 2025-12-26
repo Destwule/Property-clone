@@ -275,3 +275,12 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 });
+
+
+const mobileSearchView = window.matchMedia("(max-width: 766px)").matches;
+const searchSection = document.querySelector(".search-section");
+const searchbtn = document.querySelector(".search-btn");
+if (mobileSearchView) {
+    searchSection.appendChild(searchbtn);
+    searchbtn.classList.add("mobile-search-btn")
+}

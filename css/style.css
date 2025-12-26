@@ -32,7 +32,7 @@ html, body {
     --FFF-COLOR: #fff;
     --NAV-HOVER-BGCOLOR: rgba(173, 216, 230, .2);
     --BTN-HOVER-BGCOLOR: rgba(0, 0, 255, 0.6);
-    --SEARCH-BGCOLOR: rgba(75, 0, 139, 0.3);
+    --SEARCH-BGCOLOR: rgba(11, 17, 52, 0.65);
     --SB-COLOR: darkslateblue;
     --MARKET-GOOD-BG: rgba(0, 128, 0, 0.3);
     --MARKET-GOOD-COLOR: darkgreen;
@@ -88,143 +88,6 @@ a {
     display: block;
 }
 
-/* RESPONSIVE NAVBAR */
-.responsive-nav-section img {
-    display: inline;
-}
-
-.hamburger {
-    cursor: pointer;
-    padding: 0.1em 0.3em;
-    border: 2px solid transparent;
-    border-radius: 0.4em;
-}
-
-.hamburger:active {
-    border-color: #2563eb;
-}
-
-.close-icon {
-    display: none;
-}
-
-/* NAVBAR SECTION */
-
-.navbar {
-    font-weight: bold;
-    box-shadow: 0 8px 20px -6px rgba(0,0,0,0.25);
-    color: var(--COLOR);
-    position: sticky;
-    top: 0;
-
-    z-index: 100;
-    max-width: 100%;
-    background-color: white;
-    /* small horizontal padding so children don't rely on large margins that cause overflow */
-    padding: 0 2rem;
-}
-
-.navbar ul {
-    list-style: none;
-    padding: 0.4rem;
-}
-
-.navbar a {
-    white-space: nowrap;
-    padding: 0.8rem;
-    border-radius: 0.5rem;
-}
-
-.navbar a:hover {
-    background-color: var(--NAV-HOVER-BGCOLOR);
-    color: var(--NAV-HOVER-COLOR);
-}
-
-.navbar .logo {
-    margin-right: 15px;
-    color: var(--LOGO-COLOR);
-    cursor: pointer;
-    white-space: nowrap;
-}
-
-.navbar .nav:first-child {
-    display: none;
-}
-
-.navbar .nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    /* reduce horizontal margins to avoid adding extra width on small viewports */
-    margin: 1rem 0;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    width: 100%;
-}
-
-/* Responsive tweaks: allow nav to wrap and items to shrink rather than overflow */
-
-.navbar .start {
-    display: flex;
-    flex: 1 1 0;
-    min-width: 0; /* allow children to shrink inside flex */
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.navbar :is(.end) {
-    display: flex;
-    gap: 0.5rem;
-    flex: 0 1 auto;
-    align-items: center;
-    flex-wrap: wrap;
-    z-index: 1;
-    background-color: white;
-}
-
-.navbar :is(.first, .second, .end) {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-}
-
-.navbar .second {
-    margin-left: 10px;
-}
-
-.navbar .second::before {
-    content: '';
-    height: 20px;
-    background-color: var(--COLOR);
-    width: 1px;
-    display: block;
-    transform: translateX(-400%);
-}
-
-.dropdown-elements {
-    position: relative;
-    width: 100%;
-}
-
-.dropdown-items {
-    display: none;
-    position: absolute;
-    top: 100%;
-
-    z-index: 100;   
-    background-color: white;
-    border-radius: 0.5rem;
-    box-shadow: 0 3px 5px black;
-}   
-
-.dropdown-items ~ * {
-    padding: 1em !important;
-}
-
-.navbar :not(.end) .dropdown-elements:hover .dropdown-items {
-    display: block;
-}
-
 
 /* BANNER  */
 
@@ -242,6 +105,7 @@ a {
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
+    margin-bottom: 1em;
 }
 
 .banner-text {
@@ -256,29 +120,63 @@ a {
 /* MAIN CONTAINER SECTION  */
 
 .main-container {
-    max-width: 1200px;
+    max-width: min(1200px, 95%);
     margin-inline: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 3em;
 }
 
 /* SPONSORS SECTION */
 .sponsors-section {
-    height: 70vh;
+    height: auto;
     width: 100%;
+    margin-top: 11em;
+    /* padding: 4em 0; */
 
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 2em;
 }
+
+.other-thing {
+    display: none;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 1.2em;
+}
+
+.thing {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-weight: bolder;
+}
+
+.thing .small-box {
+    width: 40px;
+    height: 40px;
+    border: 2px solid black;
+    border-radius: 0.5em;
+}
+
+.other-thing :first-child .small-box { background: yellow; }
+.other-thing :nth-child(2) .small-box { background: skyblue; }
+.other-thing :nth-child(3) .small-box { background: tomato; }
+.other-thing :last-child .small-box { background: green; }
 
 .sponsors {
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 3em;
+    padding: 3em 0;
 
     gap: 2rem;
-    transform: translateY(30%);
+    /* transform: translateY(30%); */
 }
 
 .sponsors .sponsor {
@@ -307,7 +205,7 @@ a {
     border: 1px solid var(--COLOR);
     border-radius: 1em;
     padding: 1rem;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-weight: bold;
 }
 
@@ -320,7 +218,7 @@ a {
 }
 
 .table :is(.title, .name) {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
 }
 
 .table-head {

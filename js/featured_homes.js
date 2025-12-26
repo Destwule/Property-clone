@@ -34,10 +34,14 @@ function populate_homes(element, list) {
         const info_section = document.createElement("div");
         info_section.classList.add("info-section")
         
-        const home_img = document.createElement("img");
+        const home_img = document.createElement("div");
         home_img.classList.add("home-img");
-        home_img.src = obj.img_url;
         home.appendChild(home_img)
+        
+        const img = document.createElement("img");
+        img.classList.add("img");
+        img.src = obj.img_url;
+        home_img.appendChild(img);
         
         const home_name = document.createElement("p");
         home_name.classList.add("home-name");
