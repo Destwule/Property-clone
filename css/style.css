@@ -41,7 +41,9 @@ html, body {
 }   
 
 /* GENERAL CLASSES */
-
+.hidden {
+    display: none;
+}
 .block {
     display: block !important;
 }
