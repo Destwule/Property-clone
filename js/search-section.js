@@ -282,6 +282,7 @@ const search_btn = document.createElement("button");
 search_btn.type = "submit";
 search_btn.classList.add("search-btn");
 search_btn.classList.add("mobile-search-btn");
+search_btn.classList.add("hidden");
 search_btn.textContent = "Search";
 search_btn.classList.add("btn");
 search_form.appendChild(search_btn);
