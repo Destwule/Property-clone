@@ -213,6 +213,7 @@ function construct_nav_footings(element, list) {
         main_div.appendChild(inner_div);
         element.appendChild(main_div);
     });
+
 }
 
 construct_nav_footings(search_footer, search_footings);
@@ -276,11 +277,28 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
+const search_form = document.querySelector(".search-form");
+const search_btn = document.createElement("button");
+search_btn.type = "submit";
+search_btn.classList.add("search-btn");
+search_btn.classList.add("mobile-search-btn");
+search_btn.textContent = "Search";
+search_btn.classList.add("btn");
+search_form.appendChild(search_btn);
 
-const mobileSearchView = window.matchMedia("(max-width: 766px)").matches;
-const searchSection = document.querySelector(".search-section");
-const searchbtn = document.querySelector(".search-btn");
-if (mobileSearchView) {
-    searchSection.appendChild(searchbtn);
-    searchbtn.classList.add("mobile-search-btn")
-}
+
+// const mobileSearchView = window.matchMedia("(max-width: 766px)");
+// const searchSection = document.querySelector(".search-section");
+// const searchbtn = document.querySelector(".search-btn");
+// const mobileSearchBtn = document.querySelector(".mobile-search-btn");
+// mobilesearchbtn
+
+// function handleLayout(e) {
+//     if (e.matches) {
+//         searchSection.appendChild(searchbtn);
+//         searchbtn.classList.add("hidden")
+//         mobileSearchBtn.classList.toggle("hidden")
+//     }
+// }
+
+// mobileSearchView.addEventListener("change", handleLayout)

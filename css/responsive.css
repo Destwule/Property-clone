@@ -220,11 +220,24 @@
     .search-form {
         border-top: none;
     }
+    .search-form .mobile-search-btn {
+        display: block !important;
+        margin-top: 1em;
+    }
     .search-form .search-bar {
         flex-direction: column;
         border: 1px solid var(--LOGO-COLOR);
         border-radius: 1em;
     }
+    
+    .search-bar .search {
+        padding-right: 10px;
+    }
+
+    .search-bar .search-btn {
+        display: none !important;
+    }
+    
     .image-section {
         gap: 0;
     }
@@ -263,6 +276,7 @@
     }
 
     .search-btn.mobile-search-btn {
+        display: block;
         width: 100%;
     }
     
